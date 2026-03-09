@@ -31,8 +31,30 @@ const defaultEnvValues = {
   DATABASE_URL: `mongodb://127.0.0.1:27017/${process.env.npm_package_name}`
 }
 
-// 3. loop through our default values defined somewhere
-
+async function writeToFile(){
+  // 3. loop through our default values defined somewhere
+  let stringToWrite = "";
+  
   // 4. for each value, add it to a string that will become file content
+  // defaultEnvValues.port
+  for (const key in defaultEnvValues) {
+    if (!Object.hasOwn(defaultEnvValues, key)) continue;
 
-// 5. once string is done/ loop is done, write that string to a new .env file
+    // this grabs the value of the key that we are looking at from the object
+    // const element = defaultEnvValues[key];
+
+    // this is much shorter
+    // better for RAM usage, worse for human readability
+    stringToWrite += `${key}=${defaultEnvValues[key]}\n`;
+  }
+  
+  // 5. once string is done/ loop is done, write that string to a new .env file
+  // make sure there's actual content to write
+  stringToWrite = stringToWrite.trim();
+  if (stringToWrite.length > 0) {
+    await fs.writeFile(".env", stringToWrite);
+  }
+  console.log("Written this content to the .env file:\n" + stringToWrite)
+
+}
+writeToFile();
