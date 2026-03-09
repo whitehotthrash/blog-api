@@ -2,7 +2,6 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cors": "^2.8.6",
-    "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.3",
@@ -16,12 +15,12 @@
     "nodemon": "^3.1.14"
   },
   "scripts": {
-    "start":"node ./src/index.js",
-    "dev:watch":"nodemon ./src/index.js",
-    "dev:db:seed":"node ./src/utils/_dev/dbSeed.js",
-    "dev:db:wipe":"node ./src/utils/_dev/dbWipe.js",
-    "dev:db:wipe-and-seed":"npm run dev:db:wipe && npm run dev:db:seed",
-    "dev:env":"node ./src/utils/_dev/envSetup.js"
+    "start": "node ./src/index.js",
+    "dev:watch": "nodemon ./src/index.js",
+    "dev:db:seed": "node ./src/utils/_dev/dbSeed.js",
+    "dev:db:wipe": "node ./src/utils/_dev/dbWipe.js",
+    "dev:db:wipe-and-seed": "npm run dev:db:wipe && npm run dev:db:seed",
+    "dev:env": "node ./src/utils/_dev/envSetup.js"
   },
   "repository": {
     "type": "git",
