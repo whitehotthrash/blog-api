@@ -63,7 +63,8 @@ All properties of all entities are required.
 ### User
 
 - email: string, email address for the purpose of validation
-- password: string, hashed and salted value
+- password: string, hashed and salted value, min length of 8
+  - validate in request middleware
 - isAdmin: boolean, default: false
 - username: string, unique, atleast 3 characters long
 - usersWeFollow: array of foreign keys to users
